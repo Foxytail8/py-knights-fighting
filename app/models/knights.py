@@ -86,7 +86,7 @@ KNIGHTS = {
 }
 
 
-def calculate_protection(knight: dict) -> int:
+def calculate_protection(knight: dict) -> None:
     protection = 0
 
     for armour in knight["armour"]:
@@ -95,7 +95,7 @@ def calculate_protection(knight: dict) -> int:
     return protection
 
 
-def apply_weapon(knight: dict) -> int:
+def apply_weapon(knight: dict) -> None:
     knight["power"] += knight["weapon"]["power"]
 
 

@@ -4,7 +4,7 @@ from app.models.knights import prepare_knight
 from app.utils.stats import clamp
 
 
-def calculate_damage(attacker: dict, defender: dict) -> None:
+def calculate_damage(attacker: dict, defender: dict) -> int:
     damage = attacker["power"] - defender["protection"]
 
     return clamp(damage)
@@ -28,14 +28,14 @@ def prepare_all_knights(knights: dict) -> None:
         prepare_knight(knight)
 
 
-def get_results(knights: dict) -> None:
+def get_results(knights: dict) -> dict:
     return {
         knight["name"]: knight["hp"]
         for knight in knights.values()
     }
 
 
-def battle(knights_config: dict) -> None:
+def battle(knights_config: dict) -> dict:
     knights = deepcopy(knights_config)
 
     prepare_all_knights(knights)

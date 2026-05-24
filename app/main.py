@@ -3,7 +3,7 @@ from app.models.knights import KNIGHTS
 from app.battle.fight import battle
 
 
-def main() -> None:
+def main() -> int:
     results = battle(KNIGHTS)
 
     print("=== BATTLE RESULTS ===")

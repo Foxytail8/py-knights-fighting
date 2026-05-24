@@ -86,7 +86,7 @@ KNIGHTS = {
 }
 
 
-def calculate_protection(knight: dict) -> None:
+def calculate_protection(knight: dict) -> int:
     protection = 0
 
     for armour in knight["armour"]:
@@ -95,11 +95,11 @@ def calculate_protection(knight: dict) -> None:
     return protection
 
 
-def apply_weapon(knight: dict) -> None:
+def apply_weapon(knight: dict) -> int:
     knight["power"] += knight["weapon"]["power"]
 
 
-def apply_potion(knight: dict) -> None:
+def apply_potion(knight: dict) -> dict:
     potion = knight["potion"]
 
     if potion is None:
@@ -117,7 +117,7 @@ def apply_potion(knight: dict) -> None:
         knight["protection"] += effects["protection"]
 
 
-def prepare_knight(knight: dict) -> None:
+def prepare_knight(knight: dict) -> dict:
     knight["protection"] = calculate_protection(knight)
 
     apply_weapon(knight)
